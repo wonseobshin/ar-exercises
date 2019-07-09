@@ -10,3 +10,12 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "new store name?"
+query = gets.chomp
+
+@querystore = Store.create(name: query)
+err = @querystore.errors.messages
+
+err.each do |e, messages|
+    puts "#{e}: #{messages.first}"
+end
